@@ -7,18 +7,17 @@ import org.junit.jupiter.api.TestFactory
 /**
  * @author Maxim Tereshchenko
  */
-internal class PalindromeNumberTest {
+internal class LengthOfLastWordTest {
 
     @TestFactory
     fun tests() = listOf(
-        121 to true,
-        -121 to false,
-        10 to false,
-        -101 to false
+        "Hello World" to 5,
+        " " to 0,
+        "a " to 1L,
     )
         .map { (input, expected) ->
             dynamicTest("given $input return $expected") {
-                assertThat(PalindromeNumber().isPalindrome(input)).isEqualTo(expected)
+                assertThat(LengthOfLastWord().lengthOfLastWord(input)).isEqualTo(expected)
             }
         }
 }

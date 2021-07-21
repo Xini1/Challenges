@@ -1,7 +1,7 @@
 package com.leetcode
 
-import org.assertj.core.api.Assertions
-import org.junit.jupiter.api.DynamicTest
+import org.assertj.core.api.Assertions.assertThat
+import org.junit.jupiter.api.DynamicTest.dynamicTest
 import org.junit.jupiter.api.TestFactory
 
 /**
@@ -18,8 +18,8 @@ internal class SearchInsertPositionTest {
         Arguments(intArrayOf(1), 0) to 0,
     )
         .map { (args, expected) ->
-            DynamicTest.dynamicTest("given $args return $expected") {
-                Assertions.assertThat(SearchInsertPosition().searchInsert(args.nums, args.target)).isEqualTo(expected)
+            dynamicTest("given $args return $expected") {
+                assertThat(SearchInsertPosition().searchInsert(args.nums, args.target)).isEqualTo(expected)
             }
         }
 
