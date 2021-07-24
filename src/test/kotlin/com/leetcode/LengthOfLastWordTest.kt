@@ -1,23 +1,16 @@
 package com.leetcode
 
-import org.assertj.core.api.Assertions.assertThat
-import org.junit.jupiter.api.DynamicTest.dynamicTest
-import org.junit.jupiter.api.TestFactory
-
 /**
  * @author Maxim Tereshchenko
  */
-internal class LengthOfLastWordTest {
+internal class LengthOfLastWordTest : BaseTest<LengthOfLastWord>() {
 
-    @TestFactory
-    fun tests() = listOf(
-        "Hello World" to 5,
-        " " to 0,
-        "a " to 1L,
-    )
-        .map { (input, expected) ->
-            dynamicTest("given $input return $expected") {
-                assertThat(LengthOfLastWord().lengthOfLastWord(input)).isEqualTo(expected)
-            }
-        }
+    override fun classUnderTest() = LengthOfLastWord::class
+
+    override fun input() =
+        listOf(
+            arrayOf("Hello World") to 5,
+            arrayOf(" ") to 0,
+            arrayOf("a ") to 1,
+        )
 }

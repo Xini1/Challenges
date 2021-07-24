@@ -1,28 +1,18 @@
 package com.leetcode
 
-import org.assertj.core.api.Assertions.assertThat
-import org.junit.jupiter.api.DynamicTest.dynamicTest
-import org.junit.jupiter.api.TestFactory
-
 /**
  * @author Maxim Tereshchenko
  */
-internal class SearchInsertPositionTest {
+internal class SearchInsertPositionTest : BaseTest<SearchInsertPosition>() {
 
-    @TestFactory
-    fun tests() = listOf(
-        Arguments(intArrayOf(1, 3, 5, 6), 5) to 2,
-        Arguments(intArrayOf(1, 3, 5, 6), 2) to 1,
-        Arguments(intArrayOf(1, 3, 5, 6), 7) to 4,
-        Arguments(intArrayOf(1, 3, 5, 6), 0) to 0,
-        Arguments(intArrayOf(1), 0) to 0,
-    )
-        .map { (args, expected) ->
-            dynamicTest("given $args return $expected") {
-                assertThat(SearchInsertPosition().searchInsert(args.nums, args.target)).isEqualTo(expected)
-            }
-        }
+    override fun classUnderTest() = SearchInsertPosition::class
 
-    data class Arguments(val nums: IntArray, val target: Int) {
-    }
+    override fun input() =
+        listOf(
+            arrayOf(intArrayOf(1, 3, 5, 6), 5) to 2,
+            arrayOf(intArrayOf(1, 3, 5, 6), 2) to 1,
+            arrayOf(intArrayOf(1, 3, 5, 6), 7) to 4,
+            arrayOf(intArrayOf(1, 3, 5, 6), 0) to 0,
+            arrayOf(intArrayOf(1), 0) to 0,
+        )
 }

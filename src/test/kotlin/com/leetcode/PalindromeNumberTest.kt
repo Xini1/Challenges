@@ -7,18 +7,15 @@ import org.junit.jupiter.api.TestFactory
 /**
  * @author Maxim Tereshchenko
  */
-internal class PalindromeNumberTest {
+internal class PalindromeNumberTest : BaseTest<PalindromeNumber>() {
 
-    @TestFactory
-    fun tests() = listOf(
-        121 to true,
-        -121 to false,
-        10 to false,
-        -101 to false
-    )
-        .map { (input, expected) ->
-            dynamicTest("given $input return $expected") {
-                assertThat(PalindromeNumber().isPalindrome(input)).isEqualTo(expected)
-            }
-        }
+    override fun classUnderTest() = PalindromeNumber::class
+
+    override fun input() =
+        listOf(
+            arrayOf(121) to true,
+            arrayOf(-121) to false,
+            arrayOf(10) to false,
+            arrayOf(-101) to false
+        )
 }
