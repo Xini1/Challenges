@@ -20,7 +20,7 @@ abstract class BaseTest<T : Any> {
                 }
             }
 
-    private fun Array<out Any>.toFormattedString() =
+    private fun Array<out Any?>.toFormattedString() =
         asSequence()
             .map {
                 when (it) {
@@ -44,5 +44,5 @@ abstract class BaseTest<T : Any> {
             .first()
 
     protected abstract fun classUnderTest(): KClass<T>
-    protected abstract fun input(): List<Pair<Array<out Any>, Any>>
+    protected abstract fun input(): List<Pair<Array<out Any?>, Any?>>
 }
