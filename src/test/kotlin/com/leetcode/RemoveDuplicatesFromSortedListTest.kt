@@ -1,15 +1,15 @@
 package com.leetcode
 
 import com.leetcode.generic.ListNode
+import com.leetcode.test.AlgorithmTest
 
 /**
  * @author Maxim Tereshchenko
  */
-internal class RemoveDuplicatesFromSortedListTest : BaseTest<RemoveDuplicatesFromSortedList>() {
+internal class RemoveDuplicatesFromSortedListTest :
+    AlgorithmTest<RemoveDuplicatesFromSortedList>(RemoveDuplicatesFromSortedList::class) {
 
-    override fun classUnderTest() = RemoveDuplicatesFromSortedList::class
-
-    override fun input() =
+    override fun parameters() =
         listOf(
             intArrayOf(1, 1, 2) to intArrayOf(1, 2),
             intArrayOf(1, 1, 2, 3, 3) to intArrayOf(1, 2, 3),

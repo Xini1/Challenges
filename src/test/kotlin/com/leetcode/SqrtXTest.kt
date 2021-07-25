@@ -1,12 +1,13 @@
 package com.leetcode
 
+import com.leetcode.test.AlgorithmTest
+
 /**
  * @author Maxim Tereshchenko
  */
-internal class SqrtXTest : BaseTest<SqrtX>() {
-    override fun classUnderTest() = SqrtX::class
+internal class SqrtXTest : AlgorithmTest<SqrtX>(SqrtX::class) {
 
-    override fun input() =
+    override fun parameters() =
         listOf(
             arrayOf(4) to 2,
             arrayOf(8) to 2,

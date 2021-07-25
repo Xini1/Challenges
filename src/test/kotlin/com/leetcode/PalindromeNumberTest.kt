@@ -1,17 +1,13 @@
 package com.leetcode
 
-import org.assertj.core.api.Assertions.assertThat
-import org.junit.jupiter.api.DynamicTest.dynamicTest
-import org.junit.jupiter.api.TestFactory
+import com.leetcode.test.AlgorithmTest
 
 /**
  * @author Maxim Tereshchenko
  */
-internal class PalindromeNumberTest : BaseTest<PalindromeNumber>() {
+internal class PalindromeNumberTest : AlgorithmTest<PalindromeNumber>(PalindromeNumber::class) {
 
-    override fun classUnderTest() = PalindromeNumber::class
-
-    override fun input() =
+    override fun parameters() =
         listOf(
             arrayOf(121) to true,
             arrayOf(-121) to false,
