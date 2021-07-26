@@ -15,9 +15,9 @@ class TreeNode(var `val`: Int, var left: TreeNode? = null, var right: TreeNode? 
             val stack = mutableListOf<TreeNode>().apply { add(root) }
 
             for (i in 1..array.size step 2) {
-                stack.last().left = array.elementAtOrNull(i)?.run { TreeNode(this) }
-                stack.last().right = array.elementAtOrNull(i + 1)?.run { TreeNode(this) }
-                stack.removeLast()
+                stack.first().left = array.elementAtOrNull(i)?.run { TreeNode(this) }
+                stack.first().right = array.elementAtOrNull(i + 1)?.run { TreeNode(this) }
+                stack.removeFirst()
                     .apply {
                         left?.run { stack.add(this) }
                     }
@@ -51,6 +51,6 @@ class TreeNode(var `val`: Int, var left: TreeNode? = null, var right: TreeNode? 
     }
 
     override fun toString(): String {
-        return "$`val`(${left?.`val`}, ${right?.`val`})"
+        return "$`val` ($left, $right)"
     }
 }
