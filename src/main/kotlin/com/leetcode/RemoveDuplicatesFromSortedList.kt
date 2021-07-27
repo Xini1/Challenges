@@ -16,7 +16,7 @@ class RemoveDuplicatesFromSortedList {
             .map { it.`val` }
             .distinct()
             .map { ListNode(it) }
-            .reduce() { node, nextNode ->
+            .reduce { node, nextNode ->
                 node.also {
                     generateSequence(it) { seed -> seed.next }
                         .last()

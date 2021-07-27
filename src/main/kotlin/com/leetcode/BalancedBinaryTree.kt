@@ -19,7 +19,7 @@ class BalancedBinaryTree {
                 isBalanced(root.right)
     }
 
-    private fun TreeNode?.depth(current: Int = 0): Int {
+    private fun TreeNode?.depth(current: Int = 1): Int {
         if (this == null) {
             return current
         }

@@ -1,6 +1,8 @@
 package com.leetcode.test
 
 import kotlin.reflect.KClass
+import kotlin.reflect.KFunction
+import kotlin.reflect.KVisibility
 import kotlin.reflect.full.functions
 
 /**
@@ -15,9 +17,11 @@ internal abstract class AlgorithmTest<T : Any>(private val classUnderTest: KClas
             .map { it.call() }
             .first()
 
-    private fun findMethodUnderTest() =
-        classUnderTest.functions
-            .first()
+    private fun findMethodUnderTest(): KFunction<*> {
+        return classUnderTest.functions
+            .first { it.visibility == KVisibility.PUBLIC }
+    }
+
 
     override fun Array<out Any?>.formatParameter() =
         asSequence()
