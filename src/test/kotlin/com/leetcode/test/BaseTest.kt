@@ -13,12 +13,18 @@ internal abstract class BaseTest<T> {
     protected fun runTests() =
         parameters()
             .map { (input, expected) ->
-                DynamicTest.dynamicTest("when ${input.formatParameter()} then $expected") {
+                DynamicTest.dynamicTest("when ${input.formatParameter()} then ${expected.formatToString()}") {
                     Assertions.assertThat(testCall(input)).isEqualTo(expected)
                 }
             }
 
     protected abstract fun parameters(): List<Pair<T, Any?>>
-    protected open fun T.formatParameter() = toString()
+    protected open fun T.formatParameter() = formatToString()
     protected abstract fun testCall(input: T): Any?
+
+    protected fun Any?.formatToString() =
+        when (this) {
+            is IntArray -> joinToString(prefix = "[", postfix = "]")
+            else -> toString()
+        }
 }
