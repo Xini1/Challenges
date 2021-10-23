@@ -1,7 +1,7 @@
 package com.leetcode.test
 
-import org.assertj.core.api.Assertions
-import org.junit.jupiter.api.DynamicTest
+import org.assertj.core.api.Assertions.assertThat
+import org.junit.jupiter.api.DynamicTest.dynamicTest
 import org.junit.jupiter.api.TestFactory
 
 /**
@@ -10,17 +10,15 @@ import org.junit.jupiter.api.TestFactory
 internal abstract class BaseTest<T> {
 
     @TestFactory
-    protected fun runTests() =
+    fun runTests() =
         parameters()
             .map { (input, expected) ->
-                DynamicTest.dynamicTest("when ${input.formatParameter()} then ${expected.formatToString()}") {
-                    Assertions.assertThat(testCall(input)).isEqualTo(expected)
+                dynamicTest("when ${input.formatParameter()} then ${expected.formatToString()}") {
+                    assertThat(testCall(input)).isEqualTo(expected)
                 }
             }
 
-    protected abstract fun parameters(): List<Pair<T, Any?>>
     protected open fun T.formatParameter() = formatToString()
-    protected abstract fun testCall(input: T): Any?
 
     protected fun Any?.formatToString() =
         when (this) {
@@ -28,4 +26,7 @@ internal abstract class BaseTest<T> {
             is IntArray -> joinToString(prefix = "[", postfix = "]")
             else -> toString()
         }
+
+    protected abstract fun parameters(): List<Pair<T, Any?>>
+    protected abstract fun testCall(input: T): Any?
 }

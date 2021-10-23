@@ -23,10 +23,7 @@ internal abstract class AlgorithmTest<T : Any>(private val classUnderTest: KClas
     }
 
 
-    override fun Array<out Any?>.formatParameter() =
-        asSequence()
-            .map { it.formatToString() }
-            .joinToString()
+    override fun Array<out Any?>.formatParameter() = joinToString { it.formatToString() }
 
     override fun testCall(input: Array<out Any?>) = findMethodUnderTest().call(createObjectUnderTest(), *input)
 }
