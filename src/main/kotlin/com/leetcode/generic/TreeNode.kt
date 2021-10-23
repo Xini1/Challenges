@@ -52,6 +52,10 @@ class TreeNode(var `val`: Int, var left: TreeNode? = null, var right: TreeNode? 
     }
 
     override fun toString(): String {
+        if (left == null && right == null) {
+            return `val`.toString()
+        }
+
         return "$`val` ($left, $right)"
     }
 }
