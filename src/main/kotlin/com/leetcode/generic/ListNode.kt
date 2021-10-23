@@ -6,7 +6,8 @@ package com.leetcode.generic
 class ListNode(var `val`: Int, var next: ListNode? = null) {
 
     companion object {
-        fun of(array: IntArray) =
+
+        fun from(array: IntArray) =
             array.asSequence()
                 .map { ListNode(it) }
                 .reduceOrNull { node, nextNode ->

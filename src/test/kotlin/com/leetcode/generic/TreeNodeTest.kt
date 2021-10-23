@@ -38,6 +38,5 @@ internal class TreeNodeTest : BaseTest<Array<Int?>>() {
                     )
         )
 
-    override fun testCall(input: Array<Int?>) = TreeNode.of(input)
-    override fun Array<Int?>.formatParameter() = joinToString(prefix = "[", postfix = "]")
+    override fun testCall(input: Array<Int?>) = TreeNode.from(input)
 }

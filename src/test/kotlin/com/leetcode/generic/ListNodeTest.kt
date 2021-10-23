@@ -17,7 +17,5 @@ internal class ListNodeTest : BaseTest<IntArray>() {
             intArrayOf() to null
         )
 
-    override fun IntArray.formatParameter() = joinToString(prefix = "[", postfix = "]")
-
-    override fun testCall(input: IntArray) = ListNode.of(input)
+    override fun testCall(input: IntArray) = ListNode.from(input)
 }

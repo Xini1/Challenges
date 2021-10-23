@@ -6,12 +6,13 @@ package com.leetcode.generic
 class TreeNode(var `val`: Int, var left: TreeNode? = null, var right: TreeNode? = null) {
 
     companion object {
-        fun of(array: Array<Int?>): TreeNode? {
-            if (array.isNullOrEmpty() || array[0] == null) {
+
+        fun from(array: Array<Int?>): TreeNode? {
+            if (array.isEmpty() || array[0] == null) {
                 return null
             }
 
-            val root = array[0]?.run { TreeNode(this) } ?: throw IllegalArgumentException()
+            val root = array[0]!!.run { TreeNode(this) }
             val stack = mutableListOf<TreeNode>().apply { add(root) }
 
             for (i in 1..array.size step 2) {

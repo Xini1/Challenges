@@ -15,6 +15,6 @@ internal class RemoveDuplicatesFromSortedListTest :
             intArrayOf(1, 1, 2, 3, 3) to intArrayOf(1, 2, 3),
             intArrayOf() to intArrayOf()
         )
-            .map { ListNode.of(it.first) to ListNode.of(it.second) }
+            .map { ListNode.from(it.first) to ListNode.from(it.second) }
             .map { arrayOf(it.first) to it.second }
 }

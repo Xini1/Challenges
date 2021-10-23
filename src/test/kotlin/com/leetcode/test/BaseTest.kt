@@ -24,6 +24,7 @@ internal abstract class BaseTest<T> {
 
     protected fun Any?.formatToString() =
         when (this) {
+            is Array<*> -> joinToString(prefix = "[", postfix = "]")
             is IntArray -> joinToString(prefix = "[", postfix = "]")
             else -> toString()
         }
