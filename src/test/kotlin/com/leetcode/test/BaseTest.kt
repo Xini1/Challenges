@@ -11,7 +11,7 @@ internal abstract class BaseTest<T> {
 
     @TestFactory
     fun runTests() =
-        parameters()
+        testValues()
             .map { (input, expected) ->
                 dynamicTest("when ${input.formatParameter()} then ${expected.formatToString()}") {
                     assertThat(testCall(input)).isEqualTo(expected)
@@ -27,6 +27,6 @@ internal abstract class BaseTest<T> {
             else -> toString()
         }
 
-    protected abstract fun parameters(): List<Pair<T, Any?>>
+    protected abstract fun testValues(): List<Pair<T, Any?>>
     protected abstract fun testCall(input: T): Any?
 }

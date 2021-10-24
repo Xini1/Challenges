@@ -1,14 +1,14 @@
 package com.leetcode
 
-import com.leetcode.test.AlgorithmTest
+import com.leetcode.test.SingleParameterAlgorithmTest
 
 /**
  * @author Maxim Tereshchenko
  */
 internal class SignOfTheProductOfAnArrayTest :
-    AlgorithmTest<SignOfTheProductOfAnArray>(SignOfTheProductOfAnArray::class) {
+    SingleParameterAlgorithmTest<SignOfTheProductOfAnArray>(SignOfTheProductOfAnArray::class) {
 
-    override fun parameters() =
+    override fun testValues() =
         listOf(
             intArrayOf(-1, -2, -3, -4, 3, 2, 1) to 1,
             intArrayOf(1, 5, 0, 2, -3) to 0,
@@ -44,5 +44,4 @@ internal class SignOfTheProductOfAnArrayTest :
                 -41
             ) to -1
         )
-            .map { arrayOf(it.first) to it.second }
 }

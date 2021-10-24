@@ -1,13 +1,14 @@
 package com.leetcode
 
-import com.leetcode.test.AlgorithmTest
+import com.leetcode.test.MultipleParametersAlgorithmTest
 
 /**
  * @author Maxim Tereshchenko
  */
-internal class SearchInsertPositionTest : AlgorithmTest<SearchInsertPosition>(SearchInsertPosition::class) {
+internal class SearchInsertPositionTest :
+    MultipleParametersAlgorithmTest<SearchInsertPosition>(SearchInsertPosition::class) {
 
-    override fun parameters() =
+    override fun testValues() =
         listOf(
             arrayOf(intArrayOf(1, 3, 5, 6), 5) to 2,
             arrayOf(intArrayOf(1, 3, 5, 6), 2) to 1,

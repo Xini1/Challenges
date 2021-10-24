@@ -1,15 +1,15 @@
 package com.leetcode
 
 import com.leetcode.generic.Node
-import com.leetcode.test.AlgorithmTest
+import com.leetcode.test.SingleParameterAlgorithmTest
 
 /**
  * @author Maxim Tereshchenko
  */
 internal class NaryTreePreorderTraversalTest :
-    AlgorithmTest<NaryTreePreorderTraversal>(NaryTreePreorderTraversal::class) {
+    SingleParameterAlgorithmTest<NaryTreePreorderTraversal>(NaryTreePreorderTraversal::class) {
 
-    override fun parameters() =
+    override fun testValues() =
         listOf(
             arrayOf(1, null, 3, 2, 4, null, 5, 6) to listOf(1, 3, 5, 6, 2, 4),
             arrayOf(
@@ -40,5 +40,5 @@ internal class NaryTreePreorderTraversalTest :
                 14
             ) to listOf(1, 2, 3, 6, 7, 11, 14, 4, 8, 12, 5, 9, 13, 10)
         )
-            .map { arrayOf(Node.from(it.first)) to it.second }
+            .map { Node.from(it.first) to it.second }
 }

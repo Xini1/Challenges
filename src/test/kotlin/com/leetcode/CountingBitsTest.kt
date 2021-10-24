@@ -1,16 +1,15 @@
 package com.leetcode
 
-import com.leetcode.test.AlgorithmTest
+import com.leetcode.test.SingleParameterAlgorithmTest
 
 /**
  * @author Maxim Tereshchenko
  */
-internal class CountingBitsTest : AlgorithmTest<CountingBits>(CountingBits::class) {
+internal class CountingBitsTest : SingleParameterAlgorithmTest<CountingBits>(CountingBits::class) {
 
-    override fun parameters() =
+    override fun testValues() =
         listOf(
             2 to intArrayOf(0, 1, 1),
             5 to intArrayOf(0, 1, 1, 2, 1, 2),
         )
-            .map { arrayOf(it.first) to it.second }
 }

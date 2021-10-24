@@ -1,13 +1,14 @@
 package com.leetcode
 
-import com.leetcode.test.AlgorithmTest
+import com.leetcode.test.SingleParameterAlgorithmTest
 
 /**
  * @author Maxim Tereshchenko
  */
-internal class ExcelSheetColumnTitleTest : AlgorithmTest<ExcelSheetColumnTitle>(ExcelSheetColumnTitle::class) {
+internal class ExcelSheetColumnTitleTest :
+    SingleParameterAlgorithmTest<ExcelSheetColumnTitle>(ExcelSheetColumnTitle::class) {
 
-    override fun parameters() =
+    override fun testValues() =
         listOf(
             1 to "A",
             2 to "B",
@@ -16,7 +17,6 @@ internal class ExcelSheetColumnTitleTest : AlgorithmTest<ExcelSheetColumnTitle>(
             27 to "AA",
             28 to "AB",
             701 to "ZY",
-            2147483647 to "FXSHRXW",
+            2147483647 to "FXSHRXW"
         )
-            .map { arrayOf(it.first) to it.second }
 }

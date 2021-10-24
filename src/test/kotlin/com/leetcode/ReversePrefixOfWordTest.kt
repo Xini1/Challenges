@@ -1,13 +1,14 @@
 package com.leetcode
 
-import com.leetcode.test.AlgorithmTest
+import com.leetcode.test.MultipleParametersAlgorithmTest
 
 /**
  * @author Maxim Tereshchenko
  */
-internal class ReversePrefixOfWordTest : AlgorithmTest<ReversePrefixOfWord>(ReversePrefixOfWord::class) {
+internal class ReversePrefixOfWordTest :
+    MultipleParametersAlgorithmTest<ReversePrefixOfWord>(ReversePrefixOfWord::class) {
 
-    override fun parameters() =
+    override fun testValues() =
         listOf(
             arrayOf("abcdefd", 'd') to "dcbaefd",
             arrayOf("xyxzxe", 'z') to "zxyxxe",

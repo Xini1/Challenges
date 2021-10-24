@@ -8,20 +8,29 @@ import kotlin.reflect.full.functions
 /**
  * @author Maxim Tereshchenko
  */
-internal abstract class AlgorithmTest<T : Any>(private val classUnderTest: KClass<T>) : BaseTest<Array<out Any?>>() {
+internal sealed class AlgorithmTest<T : Any, I>(private val classUnderTest: KClass<T>) : BaseTest<I>() {
 
-    private fun createObjectUnderTest() =
+    protected fun createObjectUnderTest() =
         classUnderTest.constructors
             .asSequence()
             .filter { it.parameters.isEmpty() }
             .map { it.call() }
             .first()
 
-    private fun findMethodUnderTest(): KFunction<*> {
+    protected fun findMethodUnderTest(): KFunction<*> {
         return classUnderTest.functions
             .first { it.visibility == KVisibility.PUBLIC }
     }
+}
 
+internal abstract class SingleParameterAlgorithmTest<T : Any>(classUnderTest: KClass<T>) :
+    AlgorithmTest<T, Any?>(classUnderTest) {
+
+    override fun testCall(input: Any?) = findMethodUnderTest().call(createObjectUnderTest(), input)
+}
+
+internal abstract class MultipleParametersAlgorithmTest<T : Any>(classUnderTest: KClass<T>) :
+    AlgorithmTest<T, Array<out Any?>>(classUnderTest) {
 
     override fun Array<out Any?>.formatParameter() = joinToString { it.formatToString() }
 

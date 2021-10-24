@@ -1,16 +1,16 @@
 package com.leetcode
 
-import com.leetcode.test.AlgorithmTest
+import com.leetcode.test.SingleParameterAlgorithmTest
 
 /**
  * @author Maxim Tereshchenko
  */
-internal class LengthOfLastWordTest : AlgorithmTest<LengthOfLastWord>(LengthOfLastWord::class) {
+internal class LengthOfLastWordTest : SingleParameterAlgorithmTest<LengthOfLastWord>(LengthOfLastWord::class) {
 
-    override fun parameters() =
+    override fun testValues() =
         listOf(
-            arrayOf("Hello World") to 5,
-            arrayOf(" ") to 0,
-            arrayOf("a ") to 1
+            "Hello World" to 5,
+            " " to 0,
+            "a " to 1
         )
 }

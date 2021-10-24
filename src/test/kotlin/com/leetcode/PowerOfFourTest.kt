@@ -1,20 +1,20 @@
 package com.leetcode
 
-import com.leetcode.test.AlgorithmTest
+import com.leetcode.test.SingleParameterAlgorithmTest
 
 /**
  * @author Maxim Tereshchenko
  */
-internal class PowerOfFourTest : AlgorithmTest<PowerOfFour>(PowerOfFour::class) {
+internal class PowerOfFourTest : SingleParameterAlgorithmTest<PowerOfFour>(PowerOfFour::class) {
 
-    override fun parameters() =
+    override fun testValues() =
         listOf(
-            arrayOf(16) to true,
-            arrayOf(5) to false,
-            arrayOf(1) to true,
-            arrayOf(0) to false,
-            arrayOf(9) to false,
-            arrayOf(4) to true,
-            arrayOf(2147483647) to false
+            16 to true,
+            5 to false,
+            1 to true,
+            0 to false,
+            9 to false,
+            4 to true,
+            2147483647 to false
         )
 }

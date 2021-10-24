@@ -1,14 +1,14 @@
 package com.leetcode
 
 import com.leetcode.generic.TreeNode
-import com.leetcode.test.AlgorithmTest
+import com.leetcode.test.MultipleParametersAlgorithmTest
 
 /**
  * @author Maxim Tereshchenko
  */
-internal class SameTreeTest : AlgorithmTest<SameTree>(SameTree::class) {
+internal class SameTreeTest : MultipleParametersAlgorithmTest<SameTree>(SameTree::class) {
 
-    override fun parameters() =
+    override fun testValues() =
         listOf(
             arrayOf(TreeNode.from(arrayOf(1, 2, 3)), TreeNode.from(arrayOf(1, 2, 3))) to true,
             arrayOf(TreeNode.from(arrayOf(1, 2)), TreeNode.from(arrayOf(1, null, 2))) to false,

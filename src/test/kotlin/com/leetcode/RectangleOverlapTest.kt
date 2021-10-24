@@ -1,13 +1,13 @@
 package com.leetcode
 
-import com.leetcode.test.AlgorithmTest
+import com.leetcode.test.MultipleParametersAlgorithmTest
 
 /**
  * @author Maxim Tereshchenko
  */
-internal class RectangleOverlapTest : AlgorithmTest<RectangleOverlap>(RectangleOverlap::class) {
+internal class RectangleOverlapTest : MultipleParametersAlgorithmTest<RectangleOverlap>(RectangleOverlap::class) {
 
-    override fun parameters() =
+    override fun testValues() =
         listOf(
             arrayOf(intArrayOf(0, 0, 2, 2), intArrayOf(1, 1, 3, 3)) to true,
             arrayOf(intArrayOf(0, 0, 1, 1), intArrayOf(1, 0, 2, 1)) to false,

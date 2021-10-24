@@ -7,7 +7,7 @@ import com.leetcode.test.BaseTest
  */
 internal class TreeNodeTest : BaseTest<Array<Int?>>() {
 
-    override fun parameters(): List<Pair<Array<Int?>, Any?>> =
+    override fun testValues(): List<Pair<Array<Int?>, Any?>> =
         listOf(
             arrayOf<Int?>(1, 2, 3) to TreeNode(1, TreeNode(2), TreeNode(3)),
             arrayOf<Int?>(1, 2) to TreeNode(1, TreeNode(2)),

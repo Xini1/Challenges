@@ -1,16 +1,16 @@
 package com.leetcode
 
-import com.leetcode.test.AlgorithmTest
+import com.leetcode.test.MultipleParametersAlgorithmTest
 
 /**
  * @author Maxim Tereshchenko
  */
 internal class DistributeCandiesToPeopleTest :
-    AlgorithmTest<DistributeCandiesToPeople>(DistributeCandiesToPeople::class) {
+    MultipleParametersAlgorithmTest<DistributeCandiesToPeople>(DistributeCandiesToPeople::class) {
 
-    override fun parameters() =
+    override fun testValues() =
         listOf(
-            arrayOf(7, 4) to arrayOf(1, 2, 3, 1).toIntArray(),
-            arrayOf(10, 3) to arrayOf(5, 2, 3).toIntArray()
+            arrayOf(7, 4) to intArrayOf(1, 2, 3, 1),
+            arrayOf(10, 3) to intArrayOf(5, 2, 3)
         )
 }

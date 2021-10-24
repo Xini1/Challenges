@@ -1,17 +1,17 @@
 package com.leetcode
 
-import com.leetcode.test.AlgorithmTest
+import com.leetcode.test.SingleParameterAlgorithmTest
 
 /**
  * @author Maxim Tereshchenko
  */
-internal class SqrtXTest : AlgorithmTest<SqrtX>(SqrtX::class) {
+internal class SqrtXTest : SingleParameterAlgorithmTest<SqrtX>(SqrtX::class) {
 
-    override fun parameters() =
+    override fun testValues() =
         listOf(
-            arrayOf(4) to 2,
-            arrayOf(8) to 2,
-            arrayOf(0) to 0,
-            arrayOf(2147395600) to 46340
+            4 to 2,
+            8 to 2,
+            0 to 0,
+            2147395600 to 46340
         )
 }

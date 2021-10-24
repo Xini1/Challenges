@@ -1,17 +1,17 @@
 package com.leetcode
 
-import com.leetcode.test.AlgorithmTest
+import com.leetcode.test.SingleParameterAlgorithmTest
 
 /**
  * @author Maxim Tereshchenko
  */
-internal class PalindromeNumberTest : AlgorithmTest<PalindromeNumber>(PalindromeNumber::class) {
+internal class PalindromeNumberTest : SingleParameterAlgorithmTest<PalindromeNumber>(PalindromeNumber::class) {
 
-    override fun parameters() =
+    override fun testValues() =
         listOf(
-            arrayOf(121) to true,
-            arrayOf(-121) to false,
-            arrayOf(10) to false,
-            arrayOf(-101) to false
+            121 to true,
+            -121 to false,
+            10 to false,
+            -101 to false
         )
 }
