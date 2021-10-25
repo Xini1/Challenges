@@ -7,7 +7,7 @@ class TreeNode(var `val`: Int, var left: TreeNode? = null, var right: TreeNode? 
 
     companion object {
 
-        fun from(array: Array<Int?>): TreeNode? {
+        fun from(array: Array<out Int?>): TreeNode? {
             if (array.isEmpty() || array[0] == null) {
                 return null
             }

@@ -7,7 +7,7 @@ class Node(val `val`: Int, var children: List<Node> = listOf()) {
 
     companion object {
 
-        fun from(array: Array<Int?>): Node? {
+        fun from(array: Array<out Int?>): Node? {
             if (array.isEmpty() || array[0] == null) {
                 return null
             }
