@@ -20,9 +20,9 @@ internal abstract class BaseTest<T> {
 
     protected open fun T.formatParameter() = formatToString()
 
-    protected fun Any?.formatToString() =
+    protected fun Any?.formatToString(): String =
         when (this) {
-            is Array<*> -> joinToString(prefix = "[", postfix = "]")
+            is Array<*> -> joinToString(prefix = "[", postfix = "]") { it.formatToString() }
             is IntArray -> joinToString(prefix = "[", postfix = "]")
             else -> toString()
         }
