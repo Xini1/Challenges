@@ -9,7 +9,7 @@ import com.leetcode.test.SingleParameterAlgorithmTest
 internal class RemoveDuplicatesFromSortedListTest :
     SingleParameterAlgorithmTest<RemoveDuplicatesFromSortedList>(RemoveDuplicatesFromSortedList::class) {
 
-    override fun testValues() =
+    override fun inputValues() =
         listOf(
             intArrayOf(1, 1, 2) to intArrayOf(1, 2),
             intArrayOf(1, 1, 2, 3, 3) to intArrayOf(1, 2, 3),

@@ -8,7 +8,7 @@ import com.leetcode.test.MultipleParametersAlgorithmTest
  */
 internal class SameTreeTest : MultipleParametersAlgorithmTest<SameTree>(SameTree::class) {
 
-    override fun testValues() =
+    override fun inputValues() =
         listOf(
             arrayOf(TreeNode.from(arrayOf(1, 2, 3)), TreeNode.from(arrayOf(1, 2, 3))) to true,
             arrayOf(TreeNode.from(arrayOf(1, 2)), TreeNode.from(arrayOf(1, null, 2))) to false,

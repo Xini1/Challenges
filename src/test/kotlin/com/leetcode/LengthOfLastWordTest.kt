@@ -7,7 +7,7 @@ import com.leetcode.test.SingleParameterAlgorithmTest
  */
 internal class LengthOfLastWordTest : SingleParameterAlgorithmTest<LengthOfLastWord>(LengthOfLastWord::class) {
 
-    override fun testValues() =
+    override fun inputValues() =
         listOf(
             "Hello World" to 5,
             " " to 0,

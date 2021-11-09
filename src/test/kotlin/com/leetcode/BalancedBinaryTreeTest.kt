@@ -8,7 +8,7 @@ import com.leetcode.test.SingleParameterAlgorithmTest
  */
 internal class BalancedBinaryTreeTest : SingleParameterAlgorithmTest<BalancedBinaryTree>(BalancedBinaryTree::class) {
 
-    override fun testValues() =
+    override fun inputValues() =
         listOf(
             arrayOf(3, 9, 20, null, null, 15, 7) to true,
             arrayOf(1, 2, 2, 3, 3, null, null, 4, 4) to false,

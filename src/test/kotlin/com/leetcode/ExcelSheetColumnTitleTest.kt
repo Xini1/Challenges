@@ -8,7 +8,7 @@ import com.leetcode.test.SingleParameterAlgorithmTest
 internal class ExcelSheetColumnTitleTest :
     SingleParameterAlgorithmTest<ExcelSheetColumnTitle>(ExcelSheetColumnTitle::class) {
 
-    override fun testValues() =
+    override fun inputValues() =
         listOf(
             1 to "A",
             2 to "B",

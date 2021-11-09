@@ -11,10 +11,11 @@ internal abstract class BaseTest<T> {
 
     @TestFactory
     fun runTests() =
-        testValues()
+        inputValues()
             .map { (input, expected) ->
                 dynamicTest("when ${input.formatParameter()} then ${expected.formatToString()}") {
-                    assertThat(testCall(input)).isEqualTo(expected)
+                    val returnValue = testCall(input)
+                    assertThat(examinedValue(input, returnValue)).isEqualTo(expected)
                 }
             }
 
@@ -27,6 +28,7 @@ internal abstract class BaseTest<T> {
             else -> toString()
         }
 
-    protected abstract fun testValues(): List<Pair<T, Any?>>
+    protected abstract fun inputValues(): List<Pair<T, Any?>>
     protected abstract fun testCall(input: T): Any?
+    protected open fun examinedValue(input: T, returnValue: Any?): Any? = returnValue
 }

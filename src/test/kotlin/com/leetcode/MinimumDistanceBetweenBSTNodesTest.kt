@@ -9,7 +9,7 @@ import com.leetcode.test.SingleParameterAlgorithmTest
 internal class MinimumDistanceBetweenBSTNodesTest :
     SingleParameterAlgorithmTest<MinimumDistanceBetweenBSTNodes>(MinimumDistanceBetweenBSTNodes::class) {
 
-    override fun testValues() =
+    override fun inputValues() =
         listOf(
             arrayOf(4, 2, 6, 1, 3) to 1,
             arrayOf(1, 0, 48, null, null, 12, 49) to 1,

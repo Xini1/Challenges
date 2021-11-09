@@ -7,7 +7,7 @@ import com.leetcode.test.BaseTest
  */
 internal class ListNodeTest : BaseTest<IntArray>() {
 
-    override fun testValues() =
+    override fun inputValues() =
         listOf(
             intArrayOf(1, 1, 2) to ListNode(1, ListNode(1, ListNode(2))),
             intArrayOf(1, 2) to ListNode(1, ListNode(2)),

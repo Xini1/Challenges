@@ -9,7 +9,7 @@ import com.leetcode.test.SingleParameterAlgorithmTest
 internal class NaryTreePreorderTraversalTest :
     SingleParameterAlgorithmTest<NaryTreePreorderTraversal>(NaryTreePreorderTraversal::class) {
 
-    override fun testValues() =
+    override fun inputValues() =
         listOf(
             arrayOf(1, null, 3, 2, 4, null, 5, 6) to listOf(1, 3, 5, 6, 2, 4),
             arrayOf(

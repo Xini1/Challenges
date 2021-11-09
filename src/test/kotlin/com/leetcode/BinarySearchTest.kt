@@ -7,7 +7,7 @@ import com.leetcode.test.MultipleParametersAlgorithmTest
  */
 internal class BinarySearchTest : MultipleParametersAlgorithmTest<BinarySearch>(BinarySearch::class) {
 
-    override fun testValues() =
+    override fun inputValues() =
         listOf(
             arrayOf(intArrayOf(-1, 0, 3, 5, 9, 12), 9) to 4,
             arrayOf(intArrayOf(-1, 0, 3, 5, 9, 12), 2) to -1

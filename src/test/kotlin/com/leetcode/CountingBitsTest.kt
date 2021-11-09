@@ -7,7 +7,7 @@ import com.leetcode.test.SingleParameterAlgorithmTest
  */
 internal class CountingBitsTest : SingleParameterAlgorithmTest<CountingBits>(CountingBits::class) {
 
-    override fun testValues() =
+    override fun inputValues() =
         listOf(
             2 to intArrayOf(0, 1, 1),
             5 to intArrayOf(0, 1, 1, 2, 1, 2),

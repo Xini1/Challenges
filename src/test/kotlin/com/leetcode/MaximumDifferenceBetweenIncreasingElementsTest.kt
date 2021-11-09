@@ -10,7 +10,7 @@ internal class MaximumDifferenceBetweenIncreasingElementsTest :
         MaximumDifferenceBetweenIncreasingElements::class
     ) {
 
-    override fun testValues() =
+    override fun inputValues() =
         listOf(
             intArrayOf(7, 1, 5, 4) to 4,
             intArrayOf(9, 4, 3, 2) to -1,

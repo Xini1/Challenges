@@ -7,7 +7,7 @@ import com.leetcode.test.SingleParameterAlgorithmTest
  */
 internal class AddDigitsTest : SingleParameterAlgorithmTest<AddDigits>(AddDigits::class) {
 
-    override fun testValues() =
+    override fun inputValues() =
         listOf(
             38 to 2,
             0 to 0,

@@ -7,7 +7,7 @@ import com.leetcode.test.SingleParameterAlgorithmTest
  */
 internal class SqrtXTest : SingleParameterAlgorithmTest<SqrtX>(SqrtX::class) {
 
-    override fun testValues() =
+    override fun inputValues() =
         listOf(
             4 to 2,
             8 to 2,

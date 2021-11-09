@@ -8,7 +8,7 @@ import com.leetcode.test.MultipleParametersAlgorithmTest
 internal class ReversePrefixOfWordTest :
     MultipleParametersAlgorithmTest<ReversePrefixOfWord>(ReversePrefixOfWord::class) {
 
-    override fun testValues() =
+    override fun inputValues() =
         listOf(
             arrayOf("abcdefd", 'd') to "dcbaefd",
             arrayOf("xyxzxe", 'z') to "zxyxxe",

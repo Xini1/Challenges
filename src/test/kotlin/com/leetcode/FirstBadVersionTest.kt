@@ -7,7 +7,7 @@ import com.leetcode.test.MultipleParametersAlgorithmTest
  */
 internal class FirstBadVersionTest : MultipleParametersAlgorithmTest<FirstBadVersion>(FirstBadVersion::class) {
 
-    override fun testValues() =
+    override fun inputValues() =
         listOf(
             arrayOf(5, 4) to 4,
             arrayOf(1, 1) to 1,

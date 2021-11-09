@@ -7,7 +7,7 @@ import com.leetcode.test.SingleParameterAlgorithmTest
  */
 internal class RobotReturnToOriginTest : SingleParameterAlgorithmTest<RobotReturnToOrigin>(RobotReturnToOrigin::class) {
 
-    override fun testValues() =
+    override fun inputValues() =
         listOf(
             "UD" to true,
             "LL" to false,

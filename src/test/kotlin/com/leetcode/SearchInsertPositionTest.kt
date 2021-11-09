@@ -8,7 +8,7 @@ import com.leetcode.test.MultipleParametersAlgorithmTest
 internal class SearchInsertPositionTest :
     MultipleParametersAlgorithmTest<SearchInsertPosition>(SearchInsertPosition::class) {
 
-    override fun testValues() =
+    override fun inputValues() =
         listOf(
             arrayOf(intArrayOf(1, 3, 5, 6), 5) to 2,
             arrayOf(intArrayOf(1, 3, 5, 6), 2) to 1,

@@ -9,7 +9,7 @@ import com.leetcode.test.SingleParameterAlgorithmTest
 internal class MiddleOfTheLinkedListTest :
     SingleParameterAlgorithmTest<MiddleOfTheLinkedList>(MiddleOfTheLinkedList::class) {
 
-    override fun testValues() =
+    override fun inputValues() =
         listOf(
             intArrayOf(1, 2, 3, 4, 5) to intArrayOf(3, 4, 5),
             intArrayOf(1, 2, 3, 4, 5, 6) to intArrayOf(4, 5, 6),

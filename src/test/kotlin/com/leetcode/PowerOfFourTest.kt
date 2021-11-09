@@ -7,7 +7,7 @@ import com.leetcode.test.SingleParameterAlgorithmTest
  */
 internal class PowerOfFourTest : SingleParameterAlgorithmTest<PowerOfFour>(PowerOfFour::class) {
 
-    override fun testValues() =
+    override fun inputValues() =
         listOf(
             16 to true,
             5 to false,

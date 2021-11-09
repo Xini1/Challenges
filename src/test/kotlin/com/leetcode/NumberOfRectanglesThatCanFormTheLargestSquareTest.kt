@@ -10,7 +10,7 @@ internal class NumberOfRectanglesThatCanFormTheLargestSquareTest :
         NumberOfRectanglesThatCanFormTheLargestSquare::class
     ) {
 
-    override fun testValues() =
+    override fun inputValues() =
         listOf(
             arrayOf(intArrayOf(5, 8), intArrayOf(3, 9), intArrayOf(5, 12), intArrayOf(16, 5)) to 3,
             arrayOf(intArrayOf(2, 3), intArrayOf(3, 7), intArrayOf(4, 3), intArrayOf(3, 7)) to 3

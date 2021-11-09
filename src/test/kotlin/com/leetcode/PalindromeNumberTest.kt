@@ -7,7 +7,7 @@ import com.leetcode.test.SingleParameterAlgorithmTest
  */
 internal class PalindromeNumberTest : SingleParameterAlgorithmTest<PalindromeNumber>(PalindromeNumber::class) {
 
-    override fun testValues() =
+    override fun inputValues() =
         listOf(
             121 to true,
             -121 to false,

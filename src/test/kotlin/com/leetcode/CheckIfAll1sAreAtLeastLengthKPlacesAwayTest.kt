@@ -10,7 +10,7 @@ internal class CheckIfAll1sAreAtLeastLengthKPlacesAwayTest :
         CheckIfAll1sAreAtLeastLengthKPlacesAway::class
     ) {
 
-    override fun testValues() =
+    override fun inputValues() =
         listOf(
             arrayOf(intArrayOf(1, 0, 0, 0, 1, 0, 0, 1), 2) to true,
             arrayOf(intArrayOf(1, 0, 0, 1, 0, 1), 2) to false,

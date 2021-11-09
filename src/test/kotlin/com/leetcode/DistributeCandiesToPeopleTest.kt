@@ -8,7 +8,7 @@ import com.leetcode.test.MultipleParametersAlgorithmTest
 internal class DistributeCandiesToPeopleTest :
     MultipleParametersAlgorithmTest<DistributeCandiesToPeople>(DistributeCandiesToPeople::class) {
 
-    override fun testValues() =
+    override fun inputValues() =
         listOf(
             arrayOf(7, 4) to intArrayOf(1, 2, 3, 1),
             arrayOf(10, 3) to intArrayOf(5, 2, 3)

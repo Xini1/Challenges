@@ -8,7 +8,7 @@ import com.leetcode.test.SingleParameterAlgorithmTest
 internal class MaximumAscendingSubarraySumTest :
     SingleParameterAlgorithmTest<MaximumAscendingSubarraySum>(MaximumAscendingSubarraySum::class) {
 
-    override fun testValues() =
+    override fun inputValues() =
         listOf(
             intArrayOf(10, 20, 30, 5, 10, 50) to 65,
             intArrayOf(10, 20, 30, 40, 50) to 150,

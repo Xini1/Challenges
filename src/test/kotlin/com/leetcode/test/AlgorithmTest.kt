@@ -29,10 +29,25 @@ internal abstract class SingleParameterAlgorithmTest<T : Any>(classUnderTest: KC
     override fun testCall(input: Any?) = findMethodUnderTest().call(createObjectUnderTest(), input)
 }
 
+internal abstract class MutableSingleParameterAlgorithmTest<T : Any>(classUnderTest: KClass<T>) :
+    SingleParameterAlgorithmTest<T>(classUnderTest) {
+
+    override fun examinedValue(input: Any?, returnValue: Any?) = input
+}
+
 internal abstract class MultipleParametersAlgorithmTest<T : Any>(classUnderTest: KClass<T>) :
     AlgorithmTest<T, Array<out Any?>>(classUnderTest) {
 
     override fun Array<out Any?>.formatParameter() = joinToString { it.formatToString() }
 
     override fun testCall(input: Array<out Any?>) = findMethodUnderTest().call(createObjectUnderTest(), *input)
+}
+
+internal abstract class MutableMultipleParametersAlgorithmTest<T : Any>(
+    classUnderTest: KClass<T>,
+    private val examinedValueIndex: Int
+) :
+    MultipleParametersAlgorithmTest<T>(classUnderTest) {
+
+    override fun examinedValue(input: Array<out Any?>, returnValue: Any?) = input[examinedValueIndex]
 }
