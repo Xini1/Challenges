@@ -40,6 +40,6 @@ class ListNode(var `val`: Int, var next: ListNode? = null) {
     override fun toString(): String {
         return generateSequence(this) { node -> node.next }
             .map { it.`val` }
-            .joinToString(prefix = "(", postfix = ")")
+            .joinToString(prefix = "(", postfix = ")", separator = " -> ")
     }
 }
