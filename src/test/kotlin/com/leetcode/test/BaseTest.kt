@@ -25,6 +25,7 @@ internal abstract class BaseTest<T> {
         when (this) {
             is Array<*> -> joinToString(prefix = "[", postfix = "]") { it.formatToString() }
             is IntArray -> joinToString(prefix = "[", postfix = "]")
+            is Pair<*, *> -> "(${first.formatToString()}, ${second.formatToString()})"
             else -> toString()
         }
 
