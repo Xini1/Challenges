@@ -18,6 +18,6 @@ dependencies {
     testImplementation(kotlin("reflect"))
 }
 
-tasks.getByName<Test>("test") {
+tasks.test {
     useJUnitPlatform()
 }
