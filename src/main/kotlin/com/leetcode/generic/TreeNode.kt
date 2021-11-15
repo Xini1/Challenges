@@ -31,6 +31,14 @@ class TreeNode(var `val`: Int, var left: TreeNode? = null, var right: TreeNode? 
         }
     }
 
+    fun findByValue(value: Int): TreeNode? {
+        if (`val` == value) {
+            return this
+        }
+
+        return left?.findByValue(value) ?: right?.findByValue(value)
+    }
+
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
         if (javaClass != other?.javaClass) return false
