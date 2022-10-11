@@ -22,32 +22,32 @@ class SummaryRanges {
     }
 
     private fun withoutFirst(nums: IntArray) = nums.sliceArray(1 until nums.size)
+}
 
-    private interface Range {
+interface Range {
 
-        fun canAppend(value: Int): Boolean
-        fun append(value: Int): Range
+    fun canAppend(value: Int): Boolean
+    fun append(value: Int): Range
+}
+
+class SingleValueRange(private val value: Int) : Range {
+
+    override fun canAppend(value: Int) = value == this.value + 1
+
+    override fun append(value: Int) = BoundedRange(this.value, value)
+
+    override fun toString(): String {
+        return value.toString()
     }
+}
 
-    private class SingleValueRange(private val value: Int) : Range {
+class BoundedRange(private val lowerBound: Int, private val upperBound: Int) : Range {
 
-        override fun canAppend(value: Int) = value == this.value + 1
+    override fun canAppend(value: Int) = value == upperBound + 1
 
-        override fun append(value: Int) = BoundedRange(this.value, value)
+    override fun append(value: Int) = BoundedRange(lowerBound, value)
 
-        override fun toString(): String {
-            return value.toString()
-        }
-    }
-
-    private class BoundedRange(private val lowerBound: Int, private val upperBound: Int) : Range {
-
-        override fun canAppend(value: Int) = value == upperBound + 1
-
-        override fun append(value: Int) = BoundedRange(lowerBound, value)
-
-        override fun toString(): String {
-            return "$lowerBound->$upperBound"
-        }
+    override fun toString(): String {
+        return "$lowerBound->$upperBound"
     }
 }

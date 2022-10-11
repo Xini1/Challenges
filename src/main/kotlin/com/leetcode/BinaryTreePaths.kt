@@ -21,15 +21,15 @@ class BinaryTreePaths {
         }
         return paths(updated, treeNode.left) + paths(updated, treeNode.right)
     }
+}
 
-    private class Path(private val values: List<Int>) {
+class Path(private val values: List<Int>) {
 
-        constructor() : this(emptyList())
+    constructor() : this(emptyList())
 
-        fun append(value: Int) = Path(values + value)
+    fun append(value: Int) = Path(values + value)
 
-        override fun toString(): String {
-            return values.joinToString("->")
-        }
+    override fun toString(): String {
+        return values.joinToString("->")
     }
 }
